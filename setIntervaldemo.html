@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="clock"></span>
+    <button onclick="stopClock()">STOP</button>
+    <button onclick="startlock()">START</button> 
+    <script>
+        let intervalId;
+        function displayTime()
+        {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            document.getElementById("clock").textContent=
+            `${hours.toString().padStart(2,0)}:${minutes.toString().padStart(2,0)}:${seconds.toString().padStart(2,0)}`
+            //instead of displaying 9 padstart will display 09
+        }
+            intervalId = setInterval(()=>displayTime(),1000)
+            function stopClock()
+            {
+                setTimeout(()=>clearInterval(intervalId),0)
+            }
+            function startlock()
+            {
+                intervalId=setInterval(()=>displayTime(),1000)
+            }
+        
+    </script>
+</body>
+</html>

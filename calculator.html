@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="num1">Enter Number 1</label>
+    <input type="number" name="num1" id="number1">
+    <label for="num2">Enter number 2</label>
+    <input type="number" name="num2" id="number2">
+    <button onclick="calculate('+')">+</button> 
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <span id="result"></span>
+
+    <script>
+
+        function calculate(op)
+        {
+            let num1 = document.getElementById('number1').value
+            let num2 = document.getElementById('number2').value    
+            if(isNaN(num1) || isNaN(num2))
+            {
+                document.getElementById('result').innerHTML="Please enter a valid number"
+                document.getElementById('result').style.color='red'
+            }
+            else
+            {
+
+                switch(op)
+                {
+                    case '+' :add(num1,num2)
+                            break;
+                    case '-' :sub(num1,num2)
+                            break;
+                    case '*' :mul(num1,num2)
+                            break;
+                    case '/' :div(num1,num2)
+                            break;     
+                }
+            }
+        }
+
+        let add = (num1,num2)=>{
+            let sum=parseInt(num1) + parseInt(num2)
+            document.getElementById('result').innerHTML=`The sum of ${num1} and ${num2} is ${sum}`
+        }
+        let sub = (num1,num2)=>{
+            let diff = num1 - num2
+            document.getElementById('result').innerHTML=`The diff of ${num1} and ${num2} is ${diff}`
+        }
+        let mul = (num1,num2)=>{
+            let multiply = num1*num2
+            document.getElementById('result').innerHTML=`The mul of ${num1} and ${num2} is ${multiply}`
+        }
+        let div = (num1,num2)=>{
+            let quo = num1/num2
+            document.getElementById('result').innerHTML=`The div of ${num1} and ${num2} is ${quo}`
+        }
+
+    </script>
+</body>
+</html>

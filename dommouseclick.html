@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./imagesF/flower.jpg" id="image" width="140px" height="140px" onclick="changeImage()"/>
+    <script>
+        function changeImage()
+        {
+            let imageElement = document.getElementById("image")
+            if(imageElement.src==='http://127.0.0.1:5500/imagesF/flower.jpg')
+                imageElement.src='../imagesF/flower2.jpeg'
+            else
+                imageElement.src='../imagesF/flower3.jpg'
+            console.log(imageElement.src)
+        }
+        /*
+        if we want to use includes method instead of strict operator
+        if(imageElement.src.includes('imagesF/flower.jpg')
+        imageElement.src="../imagesF/flower2.jpg
+    
+        we can also use ternary operator instead of if else    "*/
+    </script>
+</body>
+</html>

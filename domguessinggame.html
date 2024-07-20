@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--guessing game
+        computer generates a random number between 0 and 10
+        we have to guess a number withing 5 attempts-->
+        Guess a Number :
+        <input type="number" id="num">
+        <button onclick="check()">Check</button>
+        <span id="result"></span>
+        <script>
+            const randomNumber = Math.floor(Math.random() *10)//0 to 10
+            console.log(randomNumber)
+            let noOfAttempts=0
+            function check()
+            {
+                noOfAttempts++
+                if(noOfAttempts>5)
+                {
+                    document.getElementById('result').innerHTML=`you have exceeded your Maximum number of Attempts`
+                    document.getElementById('num').disabled=true
+                }
+                else
+                {
+                    let guessedNumber = document.getElementById('num').value
+                    if(randomNumber ===  parseInt(guessedNumber))
+                    {
+                        document.getElementById('result').innerHTML = `you guessed it correctly in ${noOfAttempts} attempts`
+                    }
+                    else if(randomNumber > guessedNumber)
+                    {
+                        document.getElementById('result').innerHTML=`The guessed number is less than the random number`
+                    }
+                    else
+                    {
+                        document.getElementById('result').innerHTML=`The guessed number is greater than the random number`
+                    }
+                
+                
+                }
+            }
+        </script>
+
+</body>
+</html>

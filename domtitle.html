@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changeTitle()">Change Title</button>
+    <button onclick="changeBgColor()">Change Bg Color</button>
+    <script>
+        function changeTitle()
+        {
+            document.title="New Title"
+        }
+        function changeBgColor()
+        {
+            console.log(document.body.style.backgroundColor)
+            document.body.style.backgroundColor="blue"
+            console.log(document.body.style.backgroundColor)
+            console.log(document.body.style.backgroundColor==='blue'?document.body.style.backgroundColor="red":document.body.style.backgroundColor="blue")
+        }
+    </script>
+</body>
+</html>

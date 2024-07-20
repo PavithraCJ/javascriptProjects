@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter a number:
+    <input type="text" id="num">
+    <button onclick="checkeven()">Enter</button>
+    <span id="result"></span>
+
+    <script>
+        function checkeven()
+        {
+            let input = document.getElementById('num').value
+            let resultElement = document.getElementById('result')
+            //isNaN is an input function returns a boolean value
+            if(isNaN(input))
+            {
+                resultElement.innerHTML=`Please enter a valid number`
+                //instead of innerHTML we can also use textcontent
+            }
+            else
+            {
+                if(input%2==0)
+                {
+                    resultElement.innerHTML = `<strong>The number ${input} is even`
+                }
+                else
+                {
+                    resultElement.innerHTML = `<Strong>The number ${input} is odd`
+                }
+            }
+            //if we want to clear the input field
+            document.getElementById('num').value=''
+        }
+    </script>
+</body>
+</html>

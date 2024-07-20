@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color:red" id="para">This is a paragraph</p>
+    <button onclick="changecolor()">ChangeColor</button>
+    <!--best to write the script tag inside the body or at the end of the body only then the changes gets loaded at the end-->
+    <script>
+        function changecolor(){
+        let paraElement = document.getElementById("para")
+        console.log(paraElement.style.color)
+        if(paraElement.style.color==='red')
+            paraElement.style.color='blue'
+        else
+            paraElement.style.color='red'
+        }
+    </script>
+</body>
+</html>
